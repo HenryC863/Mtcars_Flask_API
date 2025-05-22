@@ -15,6 +15,7 @@ This project is a linear regression model API built with Flask and deployed usin
 - `docker-compose.yml` – Optional tool to manage local development and testing.
 
 # Test on local machine
+
 1. Clone this repo to your local machine.
 2. To run this API, change your directory to the docker folder and run:
 
@@ -26,4 +27,11 @@ This project is a linear regression model API built with Flask and deployed usin
 
 5. Finally, send a test prediction by making a curl POST request to the API locally using the command below:
    
-   `curl -X POST http://localhost:5050/predict_price \-H "Content-Type: application/json" \-d '{"cyl": 6, "disp": 160.0, "hp": 110, "drat": 3.9, "wt": 2.62, "qsec": 16.46, "vs": 0, "am": 1, "gear": 4, "carb": 4}'`
+   `curl -X POST http://localhost:5050/predict_price \-H "Content-Type: application/json" \-d '{"cyl": 8, "disp": 360.0, "hp": 175, "drat": 3.15, "wt": 3.44, "qsec": 17.02, "vs": 0, "am": 0, "gear": 3, "carb": 2}'`
+
+# Test on google cloud
+
+Use the following curl command that calls the model API:
+
+   ``
+
