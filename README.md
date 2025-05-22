@@ -1,4 +1,29 @@
 # Mtcars Flask API
 
+- Author - Gaohong Chen 
+- Course - STAT 418
+- Subject - Homework 3
+
 This project is a linear regression model API built with Flask and deployed using Docker and Google Cloud Run. The model is trained using the `mtcars.csv` dataset to predict a car’s MPG (miles per gallon) based on various vehicle specifications.
 
+# Project Structure
+
+- `prediction.py` – trains the linear regression model and defines the `predict()` function.
+- `server.py` – Flask API to receive JSON input and return the predicted MPG.
+- `curl_test.sh` – Example curl script to test the deployed endpoint.
+- `Dockerfile` – Defines how the app is containerized.
+- `docker-compose.yml` – Optional tool to manage local development and testing.
+
+# Test on local machine
+1. Clone this repo to your local machine.
+2. To run this API, change your directory to the docker folder and run:
+
+   `docker compose up -d`
+   
+4. Open a new terminal and run the following code to get a response `server is up - nice job!`
+
+   `curl http://localhost:5050/`
+
+5. Finally, send a test prediction by making a curl POST request to the API locally using the command below:
+   
+   `curl -X POST http://localhost:5050/predict_price \-H "Content-Type: application/json" \-d '{"cyl": 6, "disp": 160.0, "hp": 110, "drat": 3.9, "wt": 2.62, "qsec": 16.46, "vs": 0, "am": 1, "gear": 4, "carb": 4}'`
